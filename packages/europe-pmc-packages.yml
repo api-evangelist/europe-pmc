@@ -1,0 +1,32 @@
+generated: '2026-10-14'
+method: probed
+generator: harvest-packages.py
+source: registry metadata endpoints (registry.npmjs.org, pypi.org, rubygems.org, api.nuget.org, packagist.org, crates.io) ; github.com/EuropePMC
+ownership_rule: 'official: true only when the registry metadata (homepage, repository, author, URLs) names the provider''s domain (europepmc.org,
+  security/europe-pmc-domain-security.yml) or its accepted GitHub org (EuropePMC).'
+packages:
+- name: CAPITAL
+  registry: github
+  url: https://github.com/EuropePMC/CAPITAL
+  language: Jupyter Notebook
+  official: true
+  version: null
+  published: '2025-06-06'
+  source_repo: https://github.com/EuropePMC/CAPITAL
+  evidence: repository in github.com/EuropePMC, whose profile names the provider's domain
+- name: europe-pmc
+  registry: pypi
+  url: https://pypi.org/project/europe-pmc/
+  language: Python
+  official: false
+  version: 1.0.1
+  published: '2026-03-25'
+  evidence: 'name match only: the metadata names neither the provider''s domain nor its GitHub org'
+- name: europe_pmc
+  registry: pypi
+  url: https://pypi.org/project/europe_pmc/
+  language: Python
+  official: false
+  version: 1.0.1
+  published: '2026-03-25'
+  evidence: 'name match only: the metadata names neither the provider''s domain nor its GitHub org'

@@ -1,0 +1,77 @@
+generated: '2026-10-14'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 5
+  own: 3
+  other_domain: 1
+  platform: 1
+  roles:
+  - api
+  - docs
+  - other
+  - source
+  - website
+hosts:
+- host: api.europepmc.org
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: europepmc.org
+  role: api
+  relation: own
+- host: dev.europepmc.org
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - namespace-probe
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Documentation
+  serves:
+  - api
+  - docs
+  title: Europe PMC
+  status: 200
+  registrable_domain: europepmc.org
+  role: docs
+  relation: own
+- host: europepmc.org
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - cdn
+  vendor: cloudflare
+  registrable_domain: europepmc.org
+  role: website
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: www.ebi.ac.uk
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: ebi.ac.uk
+  role: other
+  relation: other-domain

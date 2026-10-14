@@ -1,23 +1,93 @@
 aid: europe-pmc
+
 name: Europe PMC
-description: 'Europe PMC is a company surfaced via the API Evangelist harvest backlog (source: tag-qc)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Europe PMC is a company surfaced via the API Evangelist harvest backlog (source: tag-qc) and added to the network as a stub for
+  full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/europe-pmc/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:tag-qc
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-14 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-13'
+
 modified: '2026-10-13'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/europe-pmc-rules.yml
+- type: Conformance
+  url: conformance/europe-pmc-conformance.yml
+- type: SecurityTxt
+  url: well-known/europe-pmc-www-security.txt
+- type: WellKnown
+  url: well-known/europe-pmc-well-known.yml
+- type: Hosts
+  url: hosts/europe-pmc-hosts.yml
+- type: Vendors
+  url: vendors/europe-pmc-vendors.yml
+- type: SDKs
+  url: packages/europe-pmc-packages.yml
+- type: Packages
+  url: packages/europe-pmc-packages.yml
+- type: Documentation
+  url: https://dev.europepmc.org/
+- type: GitHubOrganization
+  url: https://github.com/EuropePMC
+- type: DomainSecurity
+  url: security/europe-pmc-domain-security.yml
 - type: Website
   url: https://europepmc.org
+
+apis:
+- name: Europe PMC API
+  description: Provides RESTful access to articles and grants.
+  humanURL: https://dev.europepmc.org/developers
+  baseURL: https://dev.europepmc.org
+  aid: europe-pmc:europe-pmc-api-2
+- aid: europe-pmc:europe-pmc-api
+  name: Europe PMC API
+  description: 'Europe PMC API as documented publicly: 2 operations. Contract generated from the documentation by API Evangelist (2026-10-14);
+
+    not the provider''s own document.'
+  humanURL: https://dev.europepmc.org/RestfulWebService
+  baseURL: https://www.ebi.ac.uk
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/europe-pmc-openapi-generated.yml
+    x-provenance: generated
+
+x-coverage:
+  state: blocked
+  reason: bot-challenge
+  method: derived
+  generated: '2026-10-14'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: the company's own front door answers a browser with an anti-bot challenge, so nothing behind it is reachable by any reader
+  evidence:
+  - url: https://europepmc.org/mcp
+    status: 403
+  - url: https://europepmc.org
+    status: 403
+x-enrichment:
+  date: '2026-10-14'
+  status: enriched
+  artifacts_added: 10
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
