@@ -1,0 +1,49 @@
+openapi: 3.2.0
+info:
+  title: Europe PMC Europepmc API
+  version: '2026-10-14'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-14: 2 operation(s) read from 1 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Europe PMC has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 2
+    pages-with-code: 0
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-14'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://dev.europepmc.org/RestfulWebService
+servers:
+- url: https://www.ebi.ac.uk
+tags:
+- name: Europepmc
+paths:
+  /europepmc/webservices/rest/fields:
+    get:
+      operationId: get_europepmc_webservices_rest_fields
+      tags:
+      - Europepmc
+      summary: Construct your URL for a fields request as follows for the production version
+      description: Returns the list of searchable fields for the production version of the Europe PMC RESTful Web Service.
+      x-source: https://dev.europepmc.org/RestfulWebService
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /europepmc/webservices/test/rest/fields:
+    get:
+      operationId: get_europepmc_webservices_test_rest_fields
+      tags:
+      - Europepmc
+      summary: Construct your URL for a fields request as follows for the test version of the…
+      description: Returns the list of searchable fields for the test version of the Europe PMC RESTful Web Service.
+      x-source: https://dev.europepmc.org/RestfulWebService
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation

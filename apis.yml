@@ -61,18 +61,16 @@ apis:
   humanURL: https://dev.europepmc.org/developers
   baseURL: https://dev.europepmc.org
   aid: europe-pmc:europe-pmc-api-2
-- aid: europe-pmc:europe-pmc-api
-  name: Europe PMC API
-  description: 'Europe PMC API as documented publicly: 2 operations. Contract generated from the documentation by API Evangelist (2026-10-14);
-
-    not the provider''s own document.'
-  humanURL: https://dev.europepmc.org/RestfulWebService
-  baseURL: https://www.ebi.ac.uk
+- aid: europe-pmc:europe-pmc-europepmc-api
+  name: Europe PMC Europepmc API
+  description: The Europepmc API from Europe PMC — 2 operation(s) for europepmc.
+  humanURL: https://dev.europepmc.org/developers
+  baseURL: https://dev.europepmc.org
+  tags:
+  - Europepmc
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/europe-pmc-openapi-generated.yml
-    x-provenance: generated
-
+    url: openapi/europe-pmc-europepmc-api-openapi.yml
 x-coverage:
   state: blocked
   reason: bot-challenge
